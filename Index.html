@@ -1,1 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramadan Mubarak - Kamran Saqib</title>
+    <style>
+        /* Background Styling */
+        body {
+            background-color: #0a043c;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            overflow: hidden;
+        }
 
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('https://source.unsplash.com/1600x900/?ramadan,moon') no-repeat center center/cover;
+            animation: fadeIn 5s ease-in-out infinite alternate;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+
+        /* Glowing Ramadan Text */
+        .message {
+            font-size: 40px;
+            font-weight: bold;
+            text-shadow: 0 0 20px yellow;
+            margin-top: 15%;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px yellow; }
+            100% { text-shadow: 0 0 30px gold; }
+        }
+
+        /* Emoji Animation */
+        .emoji {
+            font-size: 50px;
+            margin: 20px;
+            animation: bounce 1.5s infinite alternate;
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-20px); }
+        }
+
+        /* Hanging Lanterns */
+        .lantern {
+            position: absolute;
+            width: 60px;
+            height: 100px;
+            background: url('https://www.pngall.com/wp-content/uploads/2016/04/Ramadan-Lantern.png') no-repeat center center/contain;
+            animation: swing 2s infinite ease-in-out alternate;
+        }
+
+        .lantern1 { top: 10px; left: 10%; }
+        .lantern2 { top: 10px; left: 80%; }
+
+        @keyframes swing {
+            0% { transform: rotate(-5deg); }
+            100% { transform: rotate(5deg); }
+        }
+
+        /* Stars */
+        .stars {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 1s infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background"></div>
+
+    <!-- Hanging Lanterns -->
+    <div class="lantern lantern1"></div>
+    <div class="lantern lantern2"></div>
+
+    <!-- Ramadan Greeting Message -->
+    <div class="message">🌙 Ramadan Mubarak, Kamran Saqib! 🕌✨</div>
+
+    <!-- Animated Emojis -->
+    <div class="emoji">🕌✨📿🌟🌙</div>
+
+    <script>
+        // Generate Random Stars
+        function createStars() {
+            for (let i = 0; i < 100; i++) {
+                let star = document.createElement("div");
+                star.className = "stars";
+                document.body.appendChild(star);
+                star.style.left = Math.random() * window.innerWidth + "px";
+                star.style.top = Math.random() * window.innerHeight + "px";
+                star.style.animationDuration = Math.random() * 2 + 1 + "s";
+            }
+        }
+        createStars();
+    </script>
+
+</body>
+</html>
